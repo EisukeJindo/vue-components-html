@@ -1,0 +1,23 @@
+<!-- x-templateを使ったHTMLパート -->
+<script type="text/x-template" id="my-works-view">
+  <div>
+    <my-works-section></my-works-section>
+  </div>
+</script>
+
+<!-- スクリプトのパート-->
+<script>
+  // テンプレートの追加
+  addTemplate("#my-works-view");
+
+  // ここはVueそのまま
+  Vue.component("myWorksView", {
+    template: "#my-works-view"
+  })
+</script>
+
+<link rel="import" href="/src/components/organisms/MyWorksSection.html">
+
+<!-- スタイルシートのパート -->
+<style>
+</style>

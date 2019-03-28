@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="http://unpkg.com/vue"></script>
+
+    <!-- TemplateをDOMに挿入する関数 -->
+    <script>
+        function addTemplate(elm) {
+            var self = document.currentScript.ownerDocument;
+            var template = self.querySelector(elm);
+            document.querySelector("#templates").appendChild(template.cloneNode(true));
+        }
+    </script>
+</head>
+<body>
+<!-- 実際のDOM -->
+<div id="app">
+    <my-works-view></my-works-view>
+</div>
+
+<!-- Template置き場 -->
+<div id="templates">
+</div>
+
+<!-- Importでロード -->
+<link rel="import" href="/src/components/templates/MyWorksView.html">
+
+<!-- Vue化 -->
+<script>
+    var app = new Vue({
+        el: "#app",
+        data: {
+        }
+    });
+</script>
+</body>
+</html>

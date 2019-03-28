@@ -1,0 +1,30 @@
+<!-- x-templateを使ったHTMLパート -->
+<script type="text/x-template" id="tech-tag">
+  <div class="tag">
+    {{tag}}
+  </div>
+</script>
+
+<!-- スクリプトのパート-->
+<script>
+  // テンプレートの追加
+  addTemplate("#tech-tag");
+
+  // ここはVueそのまま
+  Vue.component("TechTag", {
+    props: ["tag"],
+    template: "#tech-tag"
+  })
+</script>
+
+<!-- スタイルシートのパート -->
+<style>
+  .tag {
+    background: #588fe5;
+    display: inline-block;
+    color: #fff;
+    padding: 5px;
+    border-radius: 4px;
+    margin: 0 10px 5px;
+  }
+</style>

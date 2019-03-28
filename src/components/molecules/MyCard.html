@@ -1,0 +1,40 @@
+<!-- x-templateを使ったHTMLパート -->
+<script type="text/x-template" id="my-card">
+  <div>
+    <div>
+      <card-title :title=title></card-title>
+      <tech-tag v-if="useTech1" :tag=useTech1></tech-tag>
+      <tech-tag v-if="useTech2" :tag=useTech2></tech-tag>
+      <card-text :description=description></card-text>
+      <card-date :date=date></card-date>
+    </div>
+  </div>
+</script>
+
+<!-- スクリプトのパート-->
+<script>
+  // テンプレートの追加
+  addTemplate("#my-card");
+
+  // ここはVueそのまま
+  Vue.component("myCard", {
+    props: [
+	  "tag",
+	  "date",
+      "useTech1",
+      "useTech2",
+	  "title",
+	  "description"
+    ],
+    template: "#my-card"
+  })
+</script>
+
+<link rel="import" href="/src/components/atoms/TechTag.html">
+<link rel="import" href="/src/components/atoms/CardTitle.html">
+<link rel="import" href="/src/components/atoms/CardText.html">
+<link rel="import" href="/src/components/atoms/CardDate.html">
+
+<!-- スタイルシートのパート -->
+<style>
+</style>

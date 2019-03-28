@@ -1,0 +1,22 @@
+<!-- x-templateを使ったHTMLパート -->
+<script type="text/x-template" id="card-date">
+  <div>
+    <small>{{ date }}</small>
+  </div>
+</script>
+
+<!-- スクリプトのパート-->
+<script>
+  // テンプレートの追加
+  addTemplate("#card-date");
+
+  // ここはVueそのまま
+  Vue.component("CardDate", {
+    props: ["date"],
+    template: "#card-date"
+  })
+</script>
+
+<!-- スタイルシートのパート -->
+<style>
+</style>

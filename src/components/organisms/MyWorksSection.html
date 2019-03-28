@@ -1,0 +1,82 @@
+<!-- x-templateを使ったHTMLパート -->
+<script type="text/x-template" id="my-works-section">
+  <div>
+    <div class="card-section">
+      <div class="card">
+        <a class="card-link" href="">
+          <img src="https://dummyimage.com/280x168/000/ffffff.png&text=no+image"/>
+          <my-card title="MyProfile3"
+                   description="ホームページ3作品目です。Vue.jsを用いてSPAを書きました。コンポーネント同士が疎結合になるようコンポーネント指向を心掛けました。"
+                   useTech1="Vue.js"
+                   useTech2="CSS"
+                   date="2018/11/11"
+                   class="card-content">
+          </my-card>
+        </a>
+      </div>
+      <div class="card">
+        <a class="card-link" href="">
+          <img src="https://dummyimage.com/280x168/000/ffffff.png&text=no+image"/>
+          <my-card title="title"
+                   description="description"
+                   useTech1="useTech1"
+                   useTech2="useTech2"
+                   date="date"
+                   class="card-content">
+          </my-card>
+        </a>
+      </div>
+    </div>
+  </div>
+</script>
+
+<link rel="import" href="/src/components/molecules/MyCard.html">
+
+<!-- スクリプトのパート-->
+<script>
+  // テンプレートの追加
+  addTemplate("#my-works-section");
+
+  // ここはVueそのまま
+  Vue.component("myWorksSection", {
+    template: "#my-works-section"
+  })
+</script>
+
+<!-- スタイルシートのパート -->
+<style>
+  * {
+    transition: all 0.40s ease 0s;
+    -webkit-overflow-scrolling: touch;
+  }
+  img {
+    width: 280px;
+    height: 168px;
+  }
+  .card-section {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .card {
+    width: 280px;
+    min-height: 380px;
+    margin: 20px auto;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px #ccc;
+  }
+  .card:hover {
+    opacity: 0.6;
+    transform: scale(1.03, 1.03);
+  }
+  .card-content {
+    padding: 20px;
+  }
+  .card-link {
+    text-decoration: none;
+    color: black;
+  }
+  .card-link a:hover {
+    color: #0090aa;
+  }
+</style>

@@ -1,0 +1,28 @@
+<!-- x-templateを使ったHTMLパート -->
+<script type="text/x-template" id="card-text">
+  <div>
+    <p class="card-text">{{ description }}</p>
+  </div>
+</script>
+
+<!-- スクリプトのパート-->
+<script>
+  // テンプレートの追加
+  addTemplate("#card-text");
+
+  // ここはVueそのまま
+  Vue.component("CardText", {
+    props: ["description"],
+    template: "#card-text"
+  })
+</script>
+
+<!-- スタイルシートのパート -->
+<style>
+  .card-text {
+    text-align: left;
+    color: #777;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+</style>
